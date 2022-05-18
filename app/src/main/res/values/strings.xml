@@ -1,11 +1,14 @@
 <resources>
     <string name="app_name">ShoeStore</string>
-    <string name="TheShoeStore">The Shoe Store</string>
+    <string name="The_Shoe_Store">The Shoe Store</string>
     <string name="Email">Email</string>
     <string name="Submit">Submit</string>
     <string name="Password">Password</string>
-    <string name="LogIn">Log In</string>
-    <string name="NewAccount">New Account</string>
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="Log_In">Log In</string>
+    <string name="New_Account">New Account</string>
+    <string name="welcome_to_the_shoe_store_inventory">Welcome to \nThe Shoe Store Inventory</string>
+    <string name="Continue">Continue</string>
+    <string name="Description_Text">The Shoe Store app has five screen, two of them are onboarding
+        Login and Welcome screens, that will not appear again once the user logged in the app.</string>
+
 </resources>

@@ -8,8 +8,8 @@
     <fragment
         android:id="@+id/loginFragment"
         android:name="com.udacity.shoestore.fragments.LoginFragment"
-        android:label="@string/TheShoeStore"
-        tools:layout="@layout/login_fragment">
+        android:label="@string/The_Shoe_Store"
+        tools:layout="@layout/fragment_login">
         <action
             android:id="@+id/action_loginFragment_to_welcomeFragment"
             app:destination="@id/welcomeFragment" />
