@@ -3,4 +3,7 @@
     <string name="TheShoeStore">The Shoe Store</string>
     <string name="Email">Email</string>
     <string name="Submit">Submit</string>
+    <string name="Password">Password</string>
+    <string name="LogIn">Log In</string>
+    <string name="NewAccount">New Account</string>
 </resources>
