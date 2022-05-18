@@ -6,4 +6,6 @@
     <string name="Password">Password</string>
     <string name="LogIn">Log In</string>
     <string name="NewAccount">New Account</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>
