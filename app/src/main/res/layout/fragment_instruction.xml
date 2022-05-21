@@ -3,7 +3,7 @@
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    tools:context="com.udacity.shoestore.fragments.InstructionFragment">
+    tools:context="com.udacity.shoestore.screens.instruction.InstructionFragment">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/instructionConstraint"
