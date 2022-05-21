@@ -5,7 +5,7 @@
     tools:context="com.udacity.shoestore.fragments.LoginFragment">
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/gameOverConstraintLayout"
+        android:id="@+id/loginConstraintLayout"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 

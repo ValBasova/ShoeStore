@@ -6,9 +6,13 @@
     <string name="Password">Password</string>
     <string name="Log_In">Log In</string>
     <string name="New_Account">New Account</string>
-    <string name="welcome_to_the_shoe_store_inventory">Welcome to \nThe Shoe Store Inventory</string>
     <string name="Continue">Continue</string>
-    <string name="Description_Text">The Shoe Store app has five screen, two of them are onboarding
-        Login and Welcome screens, that will not appear again once the user logged in the app.</string>
+    <string name="welcome_to_the_shoe_store_inventory">Welcome to \nThe Shoe Store Inventory</string>
+    <string name="welcome_description">Make the life easy for your business to track products
+        with the Shoe Store Inventory app. This is a simple app which allows users to manage
+        the complete list of goods in stock, such as shoes in store.</string>
+    <string name="Instruction">Instruction</string>
+    <string name="how_the_app_works">How the app works</string>
+    <string name="instruction_description">Simply press add and edit to manage the items</string>
 
 </resources>

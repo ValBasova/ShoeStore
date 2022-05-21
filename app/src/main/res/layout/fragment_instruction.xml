@@ -3,20 +3,20 @@
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    tools:context="com.udacity.shoestore.fragments.WelcomeFragment">
+    tools:context="com.udacity.shoestore.fragments.InstructionFragment">
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/welcomeConstraint"
+        android:id="@+id/instructionConstraint"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
         <TextView
-            android:id="@+id/welcome_text"
+            android:id="@+id/instruction_text"
             style="@style/OnboardingStyle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:gravity="center"
-            android:text="@string/welcome_to_the_shoe_store_inventory"
+            android:text="@string/how_the_app_works"
             app:layout_constraintBottom_toTopOf="@+id/description_text"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -28,11 +28,11 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:lineSpacingMultiplier="1.2"
-            android:text="@string/welcome_description"
+            android:text="@string/instruction_description"
             app:layout_constraintBottom_toTopOf="@+id/continue_button"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/welcome_text" />
+            app:layout_constraintTop_toBottomOf="@+id/instruction_text" />
 
         <Button
             android:id="@+id/continue_button"

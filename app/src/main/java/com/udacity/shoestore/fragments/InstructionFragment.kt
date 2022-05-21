@@ -6,13 +6,12 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
-import androidx.navigation.fragment.findNavController
 import com.udacity.shoestore.R
-import com.udacity.shoestore.databinding.FragmentWelcomeBinding
+import com.udacity.shoestore.databinding.FragmentInstructionBinding
 
-class WelcomeFragment : Fragment() {
+class InstructionFragment : Fragment() {
 
-    private lateinit var binding: FragmentWelcomeBinding
+    private lateinit var binding: FragmentInstructionBinding
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -20,13 +19,10 @@ class WelcomeFragment : Fragment() {
     ): View? {
         binding = DataBindingUtil.inflate(
             inflater,
-            R.layout.fragment_welcome,
+            R.layout.fragment_instruction,
             container,
             false
         )
-        binding.continueButton.setOnClickListener {
-            findNavController().navigate(R.id.action_welcomeFragment_to_instructionFragment)
-        }
         return binding.root
     }
 }
