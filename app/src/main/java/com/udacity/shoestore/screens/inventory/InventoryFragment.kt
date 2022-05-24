@@ -7,6 +7,7 @@ import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
+import androidx.navigation.fragment.findNavController
 import com.udacity.shoestore.R
 import com.udacity.shoestore.ShoeViewModel
 import com.udacity.shoestore.databinding.FragmentInventoryBinding
@@ -36,7 +37,7 @@ class InventoryFragment : Fragment() {
         }
 
         binding.floatingActionButton.setOnClickListener {
-//            findNavController().navigate()
+            findNavController().navigate(R.id.action_inventoryFragment_to_shoeDetailFragment)
         }
         return binding.root
     }

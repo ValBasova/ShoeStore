@@ -105,5 +105,13 @@
     </string>
     <string name="Inventory">Inventory</string>
     <string name="add_hint">add</string>
+    <string name="Details">Details</string>
+    <string name="Cancel">Cancel</string>
+    <string name="Save">Save</string>
+    <string name="create_new_item">Create new item</string>
+    <string name="Name">Name</string>
+    <string name="Size">Size</string>
+    <string name="Company">Company</string>
+    <string name="Description">Description</string>
 
 </resources>
