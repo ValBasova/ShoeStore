@@ -104,5 +104,6 @@
         "when a user tries to pick up one of cards.\n\n"
     </string>
     <string name="Inventory">Inventory</string>
+    <string name="add_hint">add</string>
 
 </resources>
