@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
@@ -29,12 +30,17 @@ class ShoeDetailFragment : Fragment() {
             false
         )
         binding.saveButton.setOnClickListener {
-            val newShoe = Shoe(
-                binding.shoeNameText.text.toString(),
-                binding.shoeSizeText.text.toString().toDouble(),
-                binding.shoeCompanyText.text.toString(),
-                binding.shoeDescriptionText.text.toString()
-            )
+            val name = binding.shoeNameText.text.toString()
+            val size = binding.shoeSizeText.text.toString()
+            val company = binding.shoeCompanyText.text.toString()
+            val description = binding.shoeDescriptionText.text.toString()
+            if (name.trim() == "" || size.trim() == "" ||
+                company.trim() == "" || description.trim() == ""
+            ) {
+                Toast.makeText(context, "Fields are empty", Toast.LENGTH_SHORT).show()
+                return@setOnClickListener
+            }
+            val newShoe = Shoe(name, size.toDouble(), company, description)
             viewModel.addNewShoe(newShoe)
             findNavController().navigate(R.id.action_shoeDetailFragment_to_inventoryFragment)
 
