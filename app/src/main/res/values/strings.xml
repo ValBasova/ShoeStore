@@ -13,7 +13,9 @@
         the complete list of goods in stock, such as shoes in store.</string>
     <string name="Instruction">Instruction</string>
     <string name="how_the_app_works">How the app works</string>
-    <string name="instruction_description">Simply press add and edit to manage the items</string>
+    <string name="instruction_description">Simply press floating button to add a new item, then
+        enter name, size, company and description of the new item. \n\nTap "save" button,
+        or press "cancel" to return back to the shoe list. </string>
     <string name="Inventory">Inventory</string>
     <string name="add_hint">add</string>
     <string name="Details">Details</string>
