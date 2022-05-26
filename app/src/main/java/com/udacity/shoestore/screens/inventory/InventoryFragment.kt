@@ -1,19 +1,18 @@
 package com.udacity.shoestore.screens.inventory
 
 import android.os.Bundle
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
+import android.view.*
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
+import androidx.navigation.findNavController
 import androidx.navigation.fragment.findNavController
+import androidx.navigation.ui.NavigationUI
 import com.udacity.shoestore.R
 import com.udacity.shoestore.ShoeViewModel
 import com.udacity.shoestore.databinding.FragmentInventoryBinding
 import com.udacity.shoestore.databinding.ShoeItemBinding
 import com.udacity.shoestore.models.Shoe
-import kotlinx.android.synthetic.main.fragment_welcome.*
 
 class InventoryFragment : Fragment() {
 
@@ -30,8 +29,8 @@ class InventoryFragment : Fragment() {
             container,
             false
         )
-        viewModel.shoeList.observe(viewLifecycleOwner){
-            for(shoe in it){
+        viewModel.shoeList.observe(viewLifecycleOwner) {
+            for (shoe in it) {
                 addViewItem(shoe)
             }
         }
@@ -39,6 +38,9 @@ class InventoryFragment : Fragment() {
         binding.floatingActionButton.setOnClickListener {
             findNavController().navigate(R.id.action_inventoryFragment_to_shoeDetailFragment)
         }
+
+        setHasOptionsMenu(true)
+
         return binding.root
     }
 
@@ -51,5 +53,15 @@ class InventoryFragment : Fragment() {
             itemDescriptionText.text = shoe.description
         }
         binding.shoeItemScroll.addView(viewItem.root)
+    }
+
+    override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
+        super.onCreateOptionsMenu(menu, inflater)
+        inflater.inflate(R.menu.overflow_menu, menu)
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        return NavigationUI.onNavDestinationSelected(item, requireView().findNavController())
+                || super.onOptionsItemSelected(item)
     }
 }
