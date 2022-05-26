@@ -20,7 +20,8 @@ class MainActivity : AppCompatActivity() {
         binding = DataBindingUtil.setContentView(this, R.layout.activity_main)
 
         val navController = this.findNavController(R.id.myNavHostFragment)
-        appBarConfiguration = AppBarConfiguration(navController.graph)
+        appBarConfiguration = AppBarConfiguration(setOf(R.id.loginFragment, R.id.welcomeFragment,
+        R.id.instructionFragment, R.id.inventoryFragment))
         binding.toolbar.setupWithNavController(navController, appBarConfiguration)
 
         Timber.plant(Timber.DebugTree())
