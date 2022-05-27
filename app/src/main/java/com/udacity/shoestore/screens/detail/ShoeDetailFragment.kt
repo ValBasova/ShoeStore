@@ -4,15 +4,14 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Toast
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
+import androidx.lifecycle.Observer
 import androidx.navigation.fragment.findNavController
 import com.udacity.shoestore.R
 import com.udacity.shoestore.ShoeViewModel
 import com.udacity.shoestore.databinding.FragmentShoeDetailBinding
-import com.udacity.shoestore.models.Shoe
 
 
 class ShoeDetailFragment : Fragment() {
@@ -29,25 +28,21 @@ class ShoeDetailFragment : Fragment() {
             container,
             false
         )
-        binding.saveButton.setOnClickListener {
-            val name = binding.shoeNameText.text.toString()
-            val size = binding.shoeSizeText.text.toString()
-            val company = binding.shoeCompanyText.text.toString()
-            val description = binding.shoeDescriptionText.text.toString()
-            if (name.trim() == "" || size.trim() == "" ||
-                company.trim() == "" || description.trim() == ""
-            ) {
-                Toast.makeText(context, "Fields are empty", Toast.LENGTH_SHORT).show()
-                return@setOnClickListener
-            }
-            val newShoe = Shoe(name, size.toDouble(), company, description)
-            viewModel.addNewShoe(newShoe)
-            findNavController().navigate(R.id.action_shoeDetailFragment_to_inventoryFragment)
+        binding.shoeViewModel = viewModel
 
-        }
-        binding.cancelButton.setOnClickListener {
-            findNavController().navigate(R.id.action_shoeDetailFragment_to_inventoryFragment)
-        }
+        viewModel.eventAddShoe.observe(viewLifecycleOwner, Observer { isAdded ->
+            if (isAdded) {
+                findNavController().navigate(R.id.action_shoeDetailFragment_to_inventoryFragment)
+                viewModel.onAddShoeComplete()
+            }
+        })
+
+        viewModel.eventCancel.observe(viewLifecycleOwner, Observer { isCanceled ->
+            if (isCanceled) {
+                findNavController().navigate(R.id.action_shoeDetailFragment_to_inventoryFragment)
+                viewModel.onCancelComplete()
+            }
+        })
         return binding.root
     }
 }

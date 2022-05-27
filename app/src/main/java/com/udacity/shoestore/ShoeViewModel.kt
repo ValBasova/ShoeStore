@@ -6,11 +6,24 @@ import androidx.lifecycle.ViewModel
 import com.udacity.shoestore.models.Shoe
 
 class ShoeViewModel : ViewModel() {
+    val name = MutableLiveData<String>()
+    val size = MutableLiveData<String>()
+    val company = MutableLiveData<String>()
+    val description = MutableLiveData<String>()
+
     private lateinit var myShoeList: MutableList<Shoe>
 
     private val _shoeList = MutableLiveData<List<Shoe>>()
     val shoeList: LiveData<List<Shoe>>
         get() = _shoeList
+
+    private val _eventAddShoe = MutableLiveData<Boolean>()
+    val eventAddShoe: LiveData<Boolean>
+        get() = _eventAddShoe
+
+    private val _eventCancel = MutableLiveData<Boolean>()
+    val eventCancel: LiveData<Boolean>
+        get() = _eventCancel
 
     init {
         setList()
@@ -34,7 +47,30 @@ class ShoeViewModel : ViewModel() {
         )
     }
 
-    fun addNewShoe(shoe: Shoe) {
-        myShoeList.add(shoe)
+    fun onAdd() {
+        if (name.value?.trim() != "" && size.value?.trim() != "" &&
+            company.value?.trim() != "" && description.value?.trim() != ""
+        ) {
+            val newShoe = Shoe(
+                name.value.toString(),
+                size.value.toString().toDouble(),
+                company.value.toString(),
+                description.value.toString()
+            )
+            myShoeList.add(newShoe)
+            _eventAddShoe.value = true
+        }
+    }
+
+    fun onAddShoeComplete() {
+        _eventAddShoe.value = false
+    }
+
+    fun onCancel() {
+        _eventCancel.value = true
+    }
+
+    fun onCancelComplete() {
+        _eventCancel.value = false
     }
 }

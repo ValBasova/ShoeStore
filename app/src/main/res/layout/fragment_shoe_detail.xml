@@ -1,10 +1,16 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!-- ConstraintLayout is used in fragment_shoe_detail
+<?xml version="1.0" encoding="utf-8"?><!-- ConstraintLayout is used in fragment_shoe_detail
 as it helps easily to link the child views-->
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     tools:context="com.udacity.shoestore.screens.detail.ShoeDetailFragment">
+
+    <data>
+
+        <variable
+            name="shoeViewModel"
+            type="com.udacity.shoestore.ShoeViewModel" />
+    </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
@@ -29,11 +35,11 @@ as it helps easily to link the child views-->
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
             android:ems="10"
+            android:hint="@string/Name"
             android:inputType="text"
             android:minHeight="48dp"
-            android:text=""
+            android:text="@={shoeViewModel.name}"
             android:textColor="@color/black"
-            android:hint="@string/Name"
             app:layout_constraintBottom_toTopOf="@+id/shoe_size_text"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -45,10 +51,11 @@ as it helps easily to link the child views-->
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
             android:ems="10"
-            android:inputType="number"
-            android:textColor="@color/black"
             android:hint="@string/Size"
+            android:inputType="number"
             android:minHeight="48dp"
+            android:text="@={shoeViewModel.size}"
+            android:textColor="@color/black"
             app:layout_constraintBottom_toTopOf="@+id/shoe_company_text"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -60,11 +67,11 @@ as it helps easily to link the child views-->
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
             android:ems="10"
+            android:hint="@string/Company"
             android:inputType="text"
             android:minHeight="48dp"
-            android:text=""
+            android:text="@={shoeViewModel.company}"
             android:textColor="@color/black"
-            android:hint="@string/Company"
             app:layout_constraintBottom_toTopOf="@+id/shoe_description_text"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -76,11 +83,11 @@ as it helps easily to link the child views-->
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
             android:ems="10"
+            android:hint="@string/Description"
             android:inputType="text"
             android:minHeight="48dp"
-            android:text=""
+            android:text="@={shoeViewModel.description}"
             android:textColor="@color/black"
-            android:hint="@string/Description"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/shoe_company_text" />
@@ -89,17 +96,19 @@ as it helps easily to link the child views-->
             android:id="@+id/cancel_button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:onClick="@{() -> shoeViewModel.onCancel()}"
             android:text="@string/Cancel"
             android:textColor="@color/black"
-            app:layout_constraintBaseline_toBaselineOf="@+id/save_button"
-            app:layout_constraintEnd_toStartOf="@+id/save_button"
+            app:layout_constraintBaseline_toBaselineOf="@+id/add_button"
+            app:layout_constraintEnd_toStartOf="@+id/add_button"
             app:layout_constraintStart_toStartOf="parent" />
 
         <Button
-            android:id="@+id/save_button"
+            android:id="@+id/add_button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/Save"
+            android:onClick="@{() -> shoeViewModel.onAdd()}"
+            android:text="@string/Add"
             android:textColor="@color/black"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
