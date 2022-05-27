@@ -17,79 +17,106 @@ as it helps easily to link the child views-->
         android:layout_height="match_parent">
 
         <TextView
-            android:id="@+id/label_text"
+            android:id="@+id/name_label_text"
+            style="@style/TextStyle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
-            android:text="@string/create_new_item"
-            android:textColor="@color/black"
-            app:layout_constraintBottom_toTopOf="@+id/shoe_name_text"
-            app:layout_constraintEnd_toEndOf="parent"
+            android:text="@string/Name"
+            android:gravity="center"
+            app:layout_constraintBottom_toTopOf="@+id/size_label_text"
+            app:layout_constraintEnd_toStartOf="@id/shoe_name_text"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="1.0" />
+            app:layout_constraintTop_toTopOf="parent" />
 
         <EditText
             android:id="@+id/shoe_name_text"
+            style="@style/TextStyle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
-            android:ems="10"
             android:hint="@string/Name"
             android:inputType="text"
-            android:minHeight="48dp"
             android:text="@={shoeViewModel.name}"
-            android:textColor="@color/black"
             app:layout_constraintBottom_toTopOf="@+id/shoe_size_text"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/name_label_text"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/size_label_text"
+            style="@style/TextStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/Size"
+            android:gravity="center"
+            app:layout_constraintBottom_toTopOf="@+id/company_label_text"
+            app:layout_constraintEnd_toStartOf="@id/shoe_size_text"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/label_text" />
+            app:layout_constraintTop_toBottomOf="@id/name_label_text" />
 
         <EditText
             android:id="@+id/shoe_size_text"
+            style="@style/TextStyle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
-            android:ems="10"
             android:hint="@string/Size"
             android:inputType="number"
-            android:minHeight="48dp"
             android:text="@={shoeViewModel.size}"
-            android:textColor="@color/black"
             app:layout_constraintBottom_toTopOf="@+id/shoe_company_text"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintStart_toEndOf="@id/size_label_text"
             app:layout_constraintTop_toBottomOf="@+id/shoe_name_text" />
+
+        <TextView
+            android:id="@+id/company_label_text"
+            style="@style/TextStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/Company"
+            android:gravity="center"
+            app:layout_constraintBottom_toTopOf="@+id/description_label_text"
+            app:layout_constraintEnd_toStartOf="@id/shoe_company_text"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/size_label_text" />
 
         <EditText
             android:id="@+id/shoe_company_text"
+            style="@style/TextStyle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
-            android:ems="10"
             android:hint="@string/Company"
             android:inputType="text"
-            android:minHeight="48dp"
             android:text="@={shoeViewModel.company}"
-            android:textColor="@color/black"
             app:layout_constraintBottom_toTopOf="@+id/shoe_description_text"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/company_label_text"
             app:layout_constraintTop_toBottomOf="@+id/shoe_size_text" />
+
+        <TextView
+            android:id="@+id/description_label_text"
+            style="@style/TextStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/Description"
+            android:gravity="center"
+            app:layout_constraintEnd_toStartOf="@id/shoe_description_text"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/company_label_text" />
 
         <EditText
             android:id="@+id/shoe_description_text"
+            style="@style/TextStyle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
-            android:ems="10"
             android:hint="@string/Description"
             android:inputType="text"
-            android:minHeight="48dp"
             android:text="@={shoeViewModel.description}"
-            android:textColor="@color/black"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintStart_toEndOf="@id/description_label_text"
             app:layout_constraintTop_toBottomOf="@+id/shoe_company_text" />
 
         <Button
