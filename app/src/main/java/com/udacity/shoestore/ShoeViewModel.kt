@@ -59,6 +59,10 @@ class ShoeViewModel : ViewModel() {
             )
             myShoeList.add(newShoe)
             _eventAddShoe.value = true
+            name.value = ""
+            size.value = ""
+            company.value = ""
+            description.value = ""
         }
     }
 
