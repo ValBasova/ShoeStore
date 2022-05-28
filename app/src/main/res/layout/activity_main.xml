@@ -1,5 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!-- LinearLayout used in activity_main as it fits well just for two of child views-->
+<?xml version="1.0" encoding="utf-8"?><!-- LinearLayout used in activity_main as it fits well just for two of child views-->
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
@@ -25,12 +24,13 @@
 
         </com.google.android.material.appbar.AppBarLayout>
 
-        <fragment
+        <androidx.fragment.app.FragmentContainerView
             android:id="@+id/myNavHostFragment"
             android:name="androidx.navigation.fragment.NavHostFragment"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             app:defaultNavHost="true"
-            app:navGraph="@navigation/navigation" />
+            app:navGraph="@navigation/navigation">
+        </androidx.fragment.app.FragmentContainerView>
     </LinearLayout>
 </layout>
